@@ -2,6 +2,8 @@
 
 A small task-management dashboard built with Angular. Select a user to view their tasks, create new tasks, and mark existing tasks as complete.
 
+Live demo: [helderbadim.github.io/Easy-Task-Management](https://helderbadim.github.io/Easy-Task-Management/)
+
 ## Features
 
 - Displays six sample users with avatars.
@@ -73,4 +75,3 @@ To reset the app to its initial task data, remove the `tasks` entry from your br
 ## Notes
 
 This project currently uses local sample data and has no backend, authentication, routing, or remote API integration.
-
