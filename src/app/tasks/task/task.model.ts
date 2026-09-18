@@ -1,3 +1,4 @@
+/** The Task interface represents a task. */
 export interface Task {
   id: string;
   userId: string;
@@ -6,6 +7,7 @@ export interface Task {
   dueDate: string;
 }
 
+/** The NewTaskData interface represents the data for a new task. */
 export interface NewTaskData {
   title: string;
   summary: string;

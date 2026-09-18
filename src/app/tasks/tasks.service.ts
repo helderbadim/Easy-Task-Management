@@ -147,10 +147,18 @@ private tasks = [
     }
   }
 
+  /** The getUserTasks method returns the tasks for the selected user.
+   * @param userId - The id of the user who the tasks are for.
+   * @returns The tasks for the selected user.
+  */
   getUserTasks(userId: string) {
     return this.tasks.filter(task => task.userId === userId);
   }
 
+  /** The addTask method adds a new task for the selected user.
+   * @param userId - The id of the user who the task is for.
+   * @param taskData - The data for the new task.
+  */
   addTask(userId: string, taskData: NewTaskData) {
     this.tasks.unshift({
       id: this.tasks.length + 1 + '',
@@ -162,11 +170,15 @@ private tasks = [
     this.saveTasks();
   }
 
+  /** The removeTask method removes a task from the list of tasks.
+   * @param taskId - The id of the task to remove.
+  */
   removeTask(taskId: string) {
     this.tasks = this.tasks.filter(task => task.id !== taskId);
     this.saveTasks();
   }
 
+  /** The saveTasks method saves the tasks to the local storage. */
   private saveTasks() {
     localStorage.setItem('tasks', JSON.stringify(this.tasks));
   }

@@ -13,10 +13,13 @@ import { TasksService } from '../tasks.service';
   styleUrl: './task.component.css'
 })
 export class TaskComponent {
-  tasksService = inject(TasksService);
-
+  /** The task is the task to display. */
   @Input({ required: true }) task!: Task;
 
+  /** The tasksService is the service that manages the tasks. */
+  private tasksService = inject(TasksService);
+
+  /** The onCompleteTask method is called when the task is completed. */
   onCompleteTask() {
     this.tasksService.removeTask(this.task.id);
   }

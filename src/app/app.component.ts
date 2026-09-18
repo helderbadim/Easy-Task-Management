@@ -3,14 +3,7 @@ import { HeaderComponent } from './header/header.component';
 import { UserComponent } from './user/user.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { DUMMY_USERS } from './dummy-users';
-/** Component decorator is used to define a component. */
-/**
- * The selector is the name of the component.
- * The standalone is a flag to indicate that the component is standalone.
- * The imports are the modules that are imported into the component.
- * The templateUrl is the template of the component.
- * The styleUrl is the style of the component.
- */
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -19,16 +12,21 @@ import { DUMMY_USERS } from './dummy-users';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
+  /** The users is the list of users. */
   users = DUMMY_USERS;
+
+  /** The selectedUserId is the id of the selected user. */
   selectedUserId?: string;
 
+  /** The selectedUser is the user who is selected. */
   get selectedUser() {
-    //The ! is used to tell the compiler that the value is not null.
-    //find returns an optional value, so we need to use the ! to tell the compiler that the value is not null.
     return this.users.find(user => user.id === this.selectedUserId)!;
   }
 
+  /** The onSelectUser method is called when the user is selected.
+   * @param id - The id of the user who is selected.
+  */
   onSelectUser(id: string) {
     this.selectedUserId = id;
   }
-} // This is the root component of the application.
+}
