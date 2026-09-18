@@ -1,0 +1,8 @@
+<app-card>
+  <button (click)="onSelectUser()" [class.active]="selected">
+    <!-- The [src] uses property binding to bind the source of the image to the selectedUser.avatar property. -->
+    <img [src]="imagePath" [alt]="userName" />
+    <!-- The {{ selectedUser().name }} is interpolated to display the name of the selected user. -->
+    <span>{{ user.name }}</span>
+  </button>
+</app-card>

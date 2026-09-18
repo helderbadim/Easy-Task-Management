@@ -1,0 +1,18 @@
+<app-header />
+<main>
+  <ul id="users">
+    <!-- The @for directive is used to iterate over the users array. -->
+    <!-- The track user.id is used to track the changes in the users array. -->
+    @for (user of users; track user.id) {
+    <li>
+      <app-user [user]="user" (select)="onSelectUser($event)" [selected]="user.id === selectedUserId"/>
+    </li>
+    }
+  </ul>
+  <!-- The @if directive is used to check if the selectedUser is not null. -->
+  @if (selectedUser) {
+  <app-tasks [name]="selectedUser.name" [userId]="selectedUser.id" />
+  } @else {
+  <h2>Please select a user</h2>
+  }
+</main>
